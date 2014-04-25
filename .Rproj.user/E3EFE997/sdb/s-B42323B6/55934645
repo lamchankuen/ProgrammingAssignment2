@@ -1,0 +1,17 @@
+{
+    "contents" : "makeVector <- function(x = numeric()) {\n  m <- NULL\n  set <- function(y) {\n    x <<- y\n    m <<- NULL\n  }\n  get <- function() x\n  setmean <- function(mean) m <<- mean\n  getmean <- function() m\n  list(set = set, get = get,\n       setmean = setmean,\n       getmean = getmean)\n}\n\ncachemean <- function(x, ...) {\n  m <- x$getmean()\n  if(!is.null(m)) {\n    message(\"getting cached data\")\n    return(m)\n  }\n  data <- x$get()\n  m <- mean(data, ...)\n  x$setmean(m)\n  m\n}",
+    "created" : 1398322872544.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1827845341",
+    "id" : "55934645",
+    "lastKnownWriteTime" : 1398322902,
+    "path" : "C:/Users/LCK/Desktop/Coursea/Data Science/2. R Programming/ProgrammingAssignment2/cachemean.R",
+    "project_path" : "cachemean.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
